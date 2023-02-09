@@ -15,11 +15,7 @@
     <title>Komputer Store</title>
   </head>
   <body class="container-fluid">
-    <nav
-      class="navbar navbar-light"
-      style="background-color: #e3f2fd"
-      class="row"
-    >
+    <nav class="navbar navbar-light" class="row">
       <h1 class="name">Komputer Store</h1>
       <h3 data-bs-toggle="tooltip" data-bs-placement="top" title="Homepage idk">
         <a href="#" class="link-dark">Home</a>
@@ -46,44 +42,92 @@
         </div>
       </nav>
     </nav>
-    <!-- gonna be grid most likely -->
-    <div class="container-fluid">
-      <!-- big one -->
-      <div class="row" id="row1">
-        
-      </div>
-      <!-- two same sized rectangle boxes -->
-      <div class="row" id="row2">
-        <div class="col">
-          <button class="bank-button1">button1</button>
-          <button class="bank-button2">button2</button>
-        </div>
-        <div class="col">
-          <button class="work-button1">button1</button>
-          <button class="work-button2">button2</button>
-        </div>
-        <!-- bigger one -->
-        <div class="col">
-          <button class="buy-button1">button1</button>
-          <button class="buy-button2">button2</button>
-          <button class="buy-button3">button3</button>
-        </div>
-      </div>
-    </div>
 
-    <footer class="row text-sm-center">
-      <h3 class="col">
+    <main class="row">
+      <!-- two same sized rectangle boxes -->
+      <div id="col1">
+        <div>
+          <div id="bank" class="column-item">
+            <h1>My name</h1>
+            <div>current balance = 0</div>
+            <button class="btn btn-success" type="submit">Get a loan</button>
+          </div>
+          <div id="work" class="column-item">
+            <h1>Work</h1>
+            <div>wage ---------------------------something</div>
+            <button class="btn btn-warning" id="work-button1">
+              Pay off Loan
+            </button>
+            <button class="btn btn-primary" id="work-button2">
+              Receive Salary
+            </button>
+          </div>
+          <!-- bigger one -->
+          <div class="column-item">
+            <h1>Laptops</h1>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Laptop name
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+              <ul id="features">
+                <h2>Features</h2>
+                <li class="feature1">feature1</li>
+                <li class="feature2">feature2</li>
+                <li class="feature3">feature3</li>
+                <li class="feature4">feature4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- big one -->
+      <div id="col2">
+        <div id="conputer-section">
+          <div id="img-name">
+            <h2>COMPUTER NAME (OMG ITS AN IMAC)</h2>
+            <img src="images\iMac.png" width="600" height="400">
+          </div>
+          <div id="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dolores culpa. Accusantium veniam delectus laborum repudiandae
+            veritatis in dicta, ad nisi quisquam ipsam unde, eligendi saepe at
+            odio praesentium harum.
+          </div>
+        </div>
+        <h2 id="price">Price<br />$$$</h2>
+        <button class="btn btn-primary btn-lg" id="buy-now" type="submit">
+          BUY NOW!
+        </button>
+      </div>
+    </main>
+
+    <footer id="footer" class="row">
+      <h3 class="col" id="footer-item">
         <a href="#" class="link-dark">They said about us...</a>
       </h3>
-      <h3 class="col">
+      <h3 class="col" id="footer-item">
         <a href="#" class="link-dark">LinkedIn</a>
       </h3>
-      <h3 class="col">
+      <h3 class="col" id="footer-item">
         <a class="link-dark">Become a partner</a>
       </h3>
-      <h3 class="col">
-        <a href="#">Subscribe to our newsletter!</a>
+      <h3 class="col" id="footer-item">
         <form class="d-flex">
+          <div>Subscribe to our newsletter!</div>
           <input
             class="form-control me-2"
             type="search"
