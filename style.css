@@ -1,3 +1,7 @@
+body{
+  position: relative;
+  min-height: 100vh;
+}
 .name {
   color: rgb(151, 142, 142);
 }
@@ -6,12 +10,12 @@
   /* background-image: linear-gradient(rgba(174, 194, 78, 0.222),rgba(69, 219, 174, 0.31)white); */
 }
 #col1 {
-  flex: 60%;
+  flex: 30%;
   padding: 10px;
   flex-direction: column;
 }
 #col2 {
-  flex: 40%;
+  flex: 70%;
   padding: 40px;
   flex-direction: column;
 }
@@ -28,7 +32,7 @@
 }
 #footer {
   height: 55px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   justify-content: center;
