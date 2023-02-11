@@ -10,12 +10,12 @@ body{
   /* background-image: linear-gradient(rgba(174, 194, 78, 0.222),rgba(69, 219, 174, 0.31)white); */
 }
 #col1 {
-  flex: 30%;
+  flex: 60%;
   padding: 10px;
   flex-direction: column;
 }
 #col2 {
-  flex: 70%;
+  flex: 40%;
   padding: 40px;
   flex-direction: column;
 }
@@ -47,8 +47,6 @@ body{
   font-size: medium;
 }
 
-/* .buy-button1:active,
-.buy-button2:active,
-.buy-button3:active{
-    color: black;
-} */
+#laptop-features{
+  width: 30%;
+}
