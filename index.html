@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS and Bootsrap to be configured-->
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -16,7 +15,7 @@
   </head>
   <body class="container-fluid">
     <nav class="navbar navbar-light" class="row">
-      <h1 class="name">Komputer Store</h1>
+      <h1 class="name">Welcome to Komputer Store!</h1>
       <h3 data-bs-toggle="tooltip" data-bs-placement="top" title="Homepage idk">
         <a href="#" class="link-dark">Home</a>
       </h3>
@@ -49,16 +48,22 @@
         <div>
           <div id="bank" class="column-item">
             <h2>My name</h2>
-            <div>current balance: 0</div>
+            <div>
+              <span>current balance:</span>
+              <span id="bank-balance">0</span>
+            </div>
             <button class="btn btn-success" type="submit" id="loan">
               Get a loan
             </button>
           </div>
           <div id="work" class="column-item">
-            <h1>Work</h1>
-            <div>0</div>
-            <button class="btn btn-warning" id="bank">Bank</button>
-            <button class="btn btn-primary" id="work">Work</button>
+            <h2>Work</h2>
+            <div>
+              <span>current balance:</span>
+              <span id="work-balance">0</span>
+            </div>
+            <button class="btn btn-warning" id="bank-btn">Bank</button>
+            <button class="btn btn-primary" id="work-btn">Work</button>
             <!-- <button class="btn btn-danger" id="pay-loan">
               Repay Loan
             </button> -->
@@ -67,10 +72,9 @@
           <div class="column-item">
             <h2>Laptops</h2>
             <select id="laptop-menu"></select>
-            <ul id="laptop-features">
-              <h3>Features:</h3>
-
-            </ul>
+            <h3>Features:</h3>
+            <p id="laptop-features">
+            </p>
           </div>
         </div>
       </div>
@@ -79,7 +83,7 @@
         <section id="conputer-section">
           <div id="imgage">
             <p id="laptop-title"></p>
-            <img id="laptop-image" width="600" height="400" />
+            <img src="" id="laptop-image" width="300" height="250" />
           </div>
           <p id="laptop-description">
           </p>
@@ -116,6 +120,7 @@
     <script src="scripts/store.js" type="module"></script>
     <script src="scripts/bank.js" type="module"></script>
     <script src="scripts/work.js" type="module"></script>
+    <script src="scripts/purchase.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
