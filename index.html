@@ -11,21 +11,29 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Komputer Store</title>
   </head>
   <body class="container-fluid">
     <nav class="navbar navbar-light" class="row">
-      <h1 class="name">Welcome to Komputer Store!</h1>
-      <h3 data-bs-toggle="tooltip" data-bs-placement="top" title="Homepage idk">
-        <a href="#" class="link-dark">Home</a>
-      </h3>
-      <h3>
+      <header id="nav-item">
+        <a href="#" class="link-dark">Welcome to Komputer Store!</a>
+      </header>
+      <h3
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Homepage idk"
+      ></h3>
+      <header id="nav-item">
         <a href="#" class="link-dark">Information</a>
-      </h3>
-      <h3>
+      </header>
+      <header id="nav-item">
         <a href="#" class="link-dark">Contact</a>
-      </h3>
-      <nav class="navbar navbar-light">
+      </header>
+      <nav class="navbar navbar-light" id="nav-item">
         <div class="container-fluid">
           <form class="d-flex">
             <input
@@ -45,42 +53,45 @@
     <main class="row">
       <!-- two same sized rectangle boxes -->
       <div id="col1">
-        <div>
-          <div id="bank" class="column-item">
-            <h2>My Bank Balance</h2>
-            <div>
-              <span id="bank-balance-text">Current balance in Bank:</span>
-              <span id="bank-balance">0</span>
-            </div>
-            <div>
-              <span id="loan-balance-text">Current loan:</span>
-              <span id="loan-balance">0</span>
-            </div>
-            <button class="btn btn-success" type="submit" id="loan-btn">
-              Get a loan
-            </button>
+        <div id="work" class="column-item">
+          <h2><u>My Wallet Balance</u></h2>
+          <div>
+            <span id="work-balance-text">Current balance in Wallet:
+              <span id="work-balance">0</span>$
+            </span>
           </div>
-          <div id="work" class="column-item">
-            <h2>My Wallte Balance</h2>
-            <div>
-              <span id="work-balance-text">Current balance in Wallet:</span>
-              <span id="work-balance">0</span>
-            </div>
-            <button class="btn btn-warning" id="bank-btn">Bank</button>
-            <button class="btn btn-primary" id="work-btn">Work</button>
-            <button class="btn btn-danger" id="repay-btn" disabled>Repay Loan</button>
+          <button class="btn btn-warning btn-lg" id="bank-btn">Bank</button>
+          <button class="btn btn-primary btn-lg" id="work-btn">Work</button>
+          <button class="btn btn-danger btn-lg" id="repay-btn" disabled>
+            Repay Loan
+          </button>
+        </div>
+        <div id="bank" class="column-item">
+          <h2><u>My Bank Balance</u></h2>
+          <div>
+            <span id="bank-balance-text">Current balance in Bank:
+              <span id="bank-balance">0</span>$
+            </span>
           </div>
-          <!-- bigger one -->
+          <div>
+            <span id="loan-balance-text">Current loan:
+              <span id="loan-balance">0</span>$
+            </span>
+          </div>
+          <button class="btn btn-success btn-lg" type="submit" id="loan-btn">
+            Get a loan
+          </button>
+        </div>
+        <!-- bigger one -->
 
-          <div id="laptop-select"class="column-item">
-            <div id="lpts">
-              <h2>Laptops</h2>
-              <select id="laptop-menu"></select>
-            </div>
-            <div id="feature-section">
-              <h3>Features:</h3>
-              <p id="laptop-features"></p>
-            </div>
+        <div id="laptop-select" class="column-item">
+          <div id="lpts">
+            <h2><u>Laptops</u></h2>
+            <select id="laptop-menu"></select>
+          </div>
+          <div id="feature-section">
+            <h2><u>Features:</u></h2>
+            <div id="laptop-features"></div>
           </div>
         </div>
       </div>
@@ -91,19 +102,20 @@
             <p id="laptop-title"></p>
             <img src="" id="laptop-image" />
           </div>
-          <p id="laptop-description">
-          </p>
+          <p id="laptop-description"></p>
         </section>
         <span>
-          <h4>Price:
+          <h4>
+            Price:
             <span id="laptop-price">0</span>
             $
           </h4>
-          <h4>In Stock:
+          <h4>
+            In Stock:
             <span id="laptop-stock">0</span>
           </h4>
         </span>
-        <button class="btn btn-primary btn-lg" id="buy-now" type="submit">
+        <button class="btn btn-info btn-lg" id="buy-now" type="submit">
           BUY NOW!
         </button>
       </div>
@@ -117,7 +129,7 @@
         <a href="#" class="link-dark">LinkedIn</a>
       </h3>
       <h3 class="col" id="footer-item">
-        <a class="link-dark">Become a partner</a>
+        <a href="#" class="link-dark">Become a partner</a>
       </h3>
       <h3 class="col" id="footer-item">
         <form class="d-flex">

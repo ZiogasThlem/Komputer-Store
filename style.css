@@ -1,16 +1,26 @@
-body{
+body {
   position: relative;
   min-height: 100vh;
+  background-image: url(bg-image.png);
 }
-.name {
-  color: rgb(151, 142, 142);
+a:link {
+  text-decoration: none;
 }
 .navbar {
-  background-image: linear-gradient(rgba(174, 194, 78, 0.222),rgba(69, 219, 174, 0.31),white);
+  background-image: linear-gradient(
+    rgba(174, 194, 78, 0.222),
+    rgba(69, 219, 174, 0.31),
+    rgb(223, 223, 223)
+  );
+  font-family: "Share Tech Mono";
 }
 #col1 {
+  font-family: "Calibre";
+  font-size: x-large;
   flex: 60%;
   padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
 }
 #col2 {
   flex: 40%;
@@ -31,55 +41,55 @@ body{
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(
+    rgb(223, 223, 223),
     rgba(212, 124, 55, 0.131),
     rgba(174, 194, 78, 0.222),
     rgba(69, 219, 174, 0.31)
   );
 }
-#laptop-select{
+#laptop-select {
   display: flex;
   flex-flow: row nowrap;
+}
+#lpts {
+  flex: 90%;
+}
+#features-section {
+  flex: 10%;
   justify-content: center;
 }
-#lpts{
-  flex: 50%;
-}
-#features-section{
-  flex: 50%;
-  justify-content: center;
-}
-#laptop-menu{
+#laptop-menu {
   height: 15%;
 }
-#laptop-features{
+#laptop-features {
   width: 30%;
   font-size: 20px;
+  font-family: "Share Tech Mono";
 }
 #footer-item {
   font-size: medium;
 }
-#laptop-title{
+#nav-item {
+  font-size: 45px;
+}
+#laptop-title {
   font: 55px italic;
   text-decoration: underline;
 }
+
 #laptop-description,
 #work-balance-text,
 #bank-balance-text,
-#loan-balance-text{
+#loan-balance-text {
   font-size: 30px;
-
 }
 #work-balance,
 #bank-balance,
-#loan-balance{
+#loan-balance {
   font-size: 35px;
 }
 
-#laptop-image{
+#laptop-image {
   width: 650px;
   height: 450px;
-  }
-
-/* #repay-btn{
-  display: none;
-} */
+}
