@@ -6,7 +6,6 @@ const laptopImage = document.getElementById("laptop-image")
 const laptopDescriptionDiv = document.getElementById("laptop-description")
 const laptopPriceDiv = document.getElementById("laptop-price")
 const laptopTitle = document.getElementById("laptop-title")
-const laptopStock = document.getElementById("laptop-stock")
 const buyNowBtn = document.getElementById("buy-now");
 
 let laptops = []
@@ -22,7 +21,6 @@ const addLaptopsToMenu = (laptops) => {
   laptopPriceDiv.innerHTML = parseInt(laptops[0].price);
   laptopTitle.innerHTML = laptops[0].title;
   laptopDescriptionDiv.innerHTML = laptops[0].description;
-  laptopStock.innerHTML = laptops[0].stock;
   laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + laptops[0].image;
 }
 
@@ -42,7 +40,6 @@ const handleLaptopMenuChange = (event) => {
   laptopImage.src =
     "https://hickory-quilled-actress.glitch.me/" +
     currentLaptop.image;
-  laptopStock.innerHTML = parseInt(currentLaptop.stock)
 }
 
 const buyNow = () => {

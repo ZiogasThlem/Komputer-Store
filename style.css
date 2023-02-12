@@ -48,7 +48,8 @@ a:link {
 }
 
 #laptops-select {
-  flex: 90%;
+  flex: 50%;
+  
 }
 
 #features-section {

@@ -7,15 +7,12 @@ const workBalanceElement = document.getElementById("work-balance");
 
 let workBalance = parseInt(workBalanceElement.innerHTML);
 
-function setWorkBalance(balance) {
-  document.getElementById("work-balance").innerText = balance;
-}
-
 const handleSalaryAddition = () => {
-  setWorkBalance((workBalance += 100));
+  workBalance += 100;
+  document.getElementById("work-balance").innerHTML = workBalance;
 };
 
-const handlePayLoanDose = () => {
+const handleMakeDeposit = () => {
   let loan = parseInt(document.getElementById("loan-balance").innerHTML);
   let depositedBalance = parseInt(
     document.getElementById("bank-balance").innerHTML
@@ -80,5 +77,5 @@ const handleRepayLoan = () => {
 };
 
 workButton.addEventListener("click", handleSalaryAddition);
-bankButton.addEventListener("click", handlePayLoanDose);
+bankButton.addEventListener("click", handleMakeDeposit);
 repayLoanButton.addEventListener("click", handleRepayLoan);
