@@ -1,11 +1,13 @@
+import {setBalance} from "./bank.js";
+
 const laptopMenu = document.getElementById("laptop-menu")
 const featuresList = document.getElementById("laptop-features")
 const laptopImage = document.getElementById("laptop-image")
 const laptopDescriptionDiv = document.getElementById("laptop-description")
 const laptopPriceDiv = document.getElementById("laptop-price")
-export const laptopTitle = document.getElementById("laptop-title")
-export const laptopPrice = parseInt(laptopPriceDiv.innerHTML)
-
+const laptopTitle = document.getElementById("laptop-title")
+const laptopStock = document.getElementById("laptop-stock")
+const buyNowBtn = document.getElementById("buy-now");
 
 let laptops = []
 
@@ -20,6 +22,7 @@ const addLaptopsToMenu = (laptops) => {
   laptopPriceDiv.innerHTML = parseInt(laptops[0].price);
   laptopTitle.innerHTML = laptops[0].title;
   laptopDescriptionDiv.innerHTML = laptops[0].description;
+  laptopStock.innerHTML = laptops[0].stock;
   laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + laptops[0].image;
 }
 
@@ -39,7 +42,26 @@ const handleLaptopMenuChange = (event) => {
   laptopImage.src =
     "https://hickory-quilled-actress.glitch.me/" +
     currentLaptop.image;
+  laptopStock.innerHTML = parseInt(currentLaptop.stock)
+}
+
+const buyNow = () => {
+  const selectedLaptop = laptops[laptopMenu.selectedIndex]
+  const price = selectedLaptop.price
+  const title = selectedLaptop.title
+  const balance = parseInt(document.getElementById("bank-balance").innerHTML)
+
+  if (balance >= price){
+    setBalance(balance - price)
+    alert(`Congratulations your new purchase! Happy coding with your fancy new ${title}!
+    `)
+  }
+  else {
+      alert(`Your balance is ${price-balance}$ short for ${title}`)
+  }  
 }
 
 
+
 laptopMenu.addEventListener("change", handleLaptopMenuChange);
+buyNowBtn.addEventListener("click",buyNow)

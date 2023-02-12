@@ -17,9 +17,6 @@ body{
   padding: 40px;
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
 }
 
 .column-item {
@@ -63,12 +60,14 @@ body{
 }
 #laptop-title{
   font: 55px italic;
+  text-decoration: underline;
 }
 #laptop-description,
 #work-balance-text,
 #bank-balance-text,
 #loan-balance-text{
   font-size: 30px;
+
 }
 #work-balance,
 #bank-balance,
@@ -77,9 +76,10 @@ body{
 }
 
 #laptop-image{
-  width: 600px;
-  height:550px;
-}
+  width: 650px;
+  height: 450px;
+  }
 
-
-
+/* #repay-btn{
+  display: none;
+} */
