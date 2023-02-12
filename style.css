@@ -6,29 +6,25 @@ body{
   color: rgb(151, 142, 142);
 }
 .navbar {
-  background-color: aqua;
-  /* background-image: linear-gradient(rgba(174, 194, 78, 0.222),rgba(69, 219, 174, 0.31)white); */
+  background-image: linear-gradient(rgba(174, 194, 78, 0.222),rgba(69, 219, 174, 0.31),white);
 }
 #col1 {
   flex: 60%;
   padding: 10px;
-  flex-direction: column;
 }
 #col2 {
   flex: 40%;
   padding: 40px;
-  flex-direction: column;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
+
 .column-item {
   padding: 20px;
   margin: 20px;
-}
-
-#computer-section {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  padding: 10px;
 }
 #footer {
   height: 55px;
@@ -43,10 +39,47 @@ body{
     rgba(69, 219, 174, 0.31)
   );
 }
+#laptop-select{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+#lpts{
+  flex: 50%;
+}
+#features-section{
+  flex: 50%;
+  justify-content: center;
+}
+#laptop-menu{
+  height: 15%;
+}
+#laptop-features{
+  width: 30%;
+  font-size: 20px;
+}
 #footer-item {
   font-size: medium;
 }
-
-#laptop-features{
-  width: 30%;
+#laptop-title{
+  font: 55px italic;
 }
+#laptop-description,
+#work-balance-text,
+#bank-balance-text,
+#loan-balance-text{
+  font-size: 30px;
+}
+#work-balance,
+#bank-balance,
+#loan-balance{
+  font-size: 35px;
+}
+
+#laptop-image{
+  width: 600px;
+  height:550px;
+}
+
+
+

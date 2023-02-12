@@ -1,9 +1,11 @@
 const laptopMenu = document.getElementById("laptop-menu")
 const featuresList = document.getElementById("laptop-features")
 const laptopImage = document.getElementById("laptop-image")
-export const laptopTitle = document.getElementById("laptop-title")
 const laptopDescriptionDiv = document.getElementById("laptop-description")
-export const laptopPriceDiv = document.getElementById("laptop-price")
+const laptopPriceDiv = document.getElementById("laptop-price")
+export const laptopTitle = document.getElementById("laptop-title")
+export const laptopPrice = parseInt(laptopPriceDiv.innerHTML)
+
 
 let laptops = []
 
@@ -14,10 +16,10 @@ fetch("https://hickory-quilled-actress.glitch.me/computers")
 
 const addLaptopsToMenu = (laptops) => {
   laptops.forEach((laptop) => addLaptopToMenu(laptop));
-  featuresList.innerText = laptops[0].specs;
-  laptopPriceDiv.innerText = `Price: ${laptops[0].price} $`;
-  laptopTitle.innerText = laptops[0].title;
-  laptopDescriptionDiv.innerText = laptops[0].description;
+  featuresList.innerHTML = laptops[0].specs;
+  laptopPriceDiv.innerHTML = parseInt(laptops[0].price);
+  laptopTitle.innerHTML = laptops[0].title;
+  laptopDescriptionDiv.innerHTML = laptops[0].description;
   laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + laptops[0].image;
 }
 
@@ -30,10 +32,10 @@ const addLaptopToMenu = (laptop) => {
 
 const handleLaptopMenuChange = (event) => {
   const currentLaptop = laptops[event.target.selectedIndex];
-  featuresList.innerText = currentLaptop.specs;
-  laptopPriceDiv.innerText = `Price: ${currentLaptop.price} $`;
-  laptopDescriptionDiv.innerText = currentLaptop.description;
-  laptopTitle.innerText = currentLaptop.title;
+  featuresList.innerHTML = currentLaptop.specs;
+  laptopPriceDiv.innerHTML = parseInt(currentLaptop.price);
+  laptopDescriptionDiv.innerHTML = currentLaptop.description;
+  laptopTitle.innerHTML = currentLaptop.title;
   laptopImage.src =
     "https://hickory-quilled-actress.glitch.me/" +
     currentLaptop.image;

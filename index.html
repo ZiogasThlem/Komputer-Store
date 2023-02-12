@@ -49,46 +49,55 @@
           <div id="bank" class="column-item">
             <h2>My name</h2>
             <div>
-              <span>current balance:</span>
+              <span id="bank-balance-text">current balance:</span>
               <span id="bank-balance">0</span>
             </div>
-            <button class="btn btn-success" type="submit" id="loan">
+            <div>
+              <span id="loan-balance-text">current loan:</span>
+              <span id="loan-balance">0</span>
+            </div>
+            <button class="btn btn-success" type="submit" id="loan-btn">
               Get a loan
             </button>
           </div>
           <div id="work" class="column-item">
             <h2>Work</h2>
             <div>
-              <span>current balance:</span>
+              <span id="work-balance-text">current balance:</span>
               <span id="work-balance">0</span>
             </div>
             <button class="btn btn-warning" id="bank-btn">Bank</button>
             <button class="btn btn-primary" id="work-btn">Work</button>
-            <!-- <button class="btn btn-danger" id="pay-loan">
-              Repay Loan
-            </button> -->
+            <button class="btn btn-danger" id="repay-loan">Repay Loan</button>
           </div>
           <!-- bigger one -->
-          <div class="column-item">
-            <h2>Laptops</h2>
-            <select id="laptop-menu"></select>
-            <h3>Features:</h3>
-            <p id="laptop-features">
-            </p>
+
+          <div id="laptop-select"class="column-item">
+            <div id="lpts">
+              <h2>Laptops</h2>
+              <select id="laptop-menu"></select>
+            </div>
+            <div id="feature-section">
+              <h3>Features:</h3>
+              <p id="laptop-features"></p>
+            </div>
           </div>
         </div>
       </div>
       <!-- big one -->
       <div id="col2">
         <section id="conputer-section">
-          <div id="imgage">
+          <div id="imgage-title-joined">
             <p id="laptop-title"></p>
-            <img src="" id="laptop-image" width="300" height="250" />
+            <img src="" id="laptop-image" />
           </div>
           <p id="laptop-description">
           </p>
         </section>
-        <h4 id="laptop-price">Price:<br /></h4>
+        <h4>Price:
+          <span id="laptop-price">0</span>
+          $
+        </h4>
         <button class="btn btn-primary btn-lg" id="buy-now" type="submit">
           BUY NOW!
         </button>
