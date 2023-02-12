@@ -53,11 +53,11 @@
     <main class="row">
       <!-- two same sized rectangle boxes -->
       <div id="col1">
-        <div id="work" class="column-item">
+        <div id="work" class="column1-item">
           <h2><u>My Wallet Balance</u></h2>
-          <div>
-            <span id="work-balance-text">Current balance in Wallet:
-              <span id="work-balance">0</span>$
+          <div id="work-index">
+            <span id="work-balance-text"
+              >Current balance in Wallet: <span id="work-balance">0</span>$
             </span>
           </div>
           <button class="btn btn-warning btn-lg" id="bank-btn">Bank</button>
@@ -66,16 +66,16 @@
             Repay Loan
           </button>
         </div>
-        <div id="bank" class="column-item">
+        <div id="bank" class="column1-item">
           <h2><u>My Bank Balance</u></h2>
-          <div>
-            <span id="bank-balance-text">Current balance in Bank:
-              <span id="bank-balance">0</span>$
+          <div id="bank-index">
+            <span id="bank-balance-text"
+              >Current balance in Bank: <span id="bank-balance">0</span>$
             </span>
           </div>
-          <div>
-            <span id="loan-balance-text">Current loan:
-              <span id="loan-balance">0</span>$
+          <div id="loan-index">
+            <span id="loan-balance-text"
+              >Current loan: <span id="loan-balance">0</span>$
             </span>
           </div>
           <button class="btn btn-success btn-lg" type="submit" id="loan-btn">
@@ -84,8 +84,8 @@
         </div>
         <!-- bigger one -->
 
-        <div id="laptop-select" class="column-item">
-          <div id="lpts">
+        <div id="laptop" class="column1-item">
+          <div id="laptops-select">
             <h2><u>Laptops</u></h2>
             <select id="laptop-menu"></select>
           </div>

@@ -22,7 +22,7 @@ const handlePayLoanDose = () => {
   );
 
   let transfer = parseInt(prompt("Enter your desired amount: "));
-  while (transfer > workBalance && typeof transfer === "number") {
+  while (transfer > workBalance) {
     transfer = parseInt(
       prompt(
         `Your balance is ${
@@ -32,11 +32,10 @@ const handlePayLoanDose = () => {
     );
   }
   if (loan > 0) {
-    if (loan <= workBalance - workBalance * (10 / 100)) {
+    if (loan < workBalance - workBalance * (10 / 100)) {
       workBalance -= loan;
       transfer = workBalance;
-      loan = 0;
-      setLoan(loan);
+      setLoan(0);
       repayLoanButton.disabled = true;
       alert(`Your loan is paid off!`);
     } else {
@@ -70,8 +69,9 @@ const handleRepayLoan = () => {
     document.getElementById("work-balance").innerHTML = workBalance;
   } else {
     workBalance -= loan;
-    loan = 0;
-    setLoan(loan);
+    setLoan(0);
+    alert(`Your loan is paid off!`);
+    repayLoanButton.disabled = true;
     depositedBalance += workBalance;
     setBalance(depositedBalance);
     workBalance = 0;

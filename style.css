@@ -3,9 +3,11 @@ body {
   min-height: 100vh;
   background-image: url(bg-image.png);
 }
+
 a:link {
   text-decoration: none;
 }
+
 .navbar {
   background-image: linear-gradient(
     rgba(174, 194, 78, 0.222),
@@ -14,6 +16,11 @@ a:link {
   );
   font-family: "Share Tech Mono";
 }
+
+#nav-item {
+  font-size: 45px;
+}
+
 #col1 {
   font-family: "Calibre";
   font-size: x-large;
@@ -22,6 +29,12 @@ a:link {
   display: flex;
   flex-flow: row wrap;
 }
+
+.column1-item {
+  padding: 20px;
+  margin: 20px;
+}
+
 #col2 {
   flex: 40%;
   padding: 40px;
@@ -29,10 +42,56 @@ a:link {
   flex-flow: column wrap;
 }
 
-.column-item {
-  padding: 20px;
-  margin: 20px;
+#laptop {
+  display: flex;
+  flex-flow: row nowrap;
 }
+
+#laptops-select {
+  flex: 90%;
+}
+
+#features-section {
+  flex: 10%;
+  justify-content: center;
+}
+
+#laptop-title {
+  font: 55px italic;
+  text-decoration: underline;
+}
+
+#laptop-features {
+  width: 30%;
+  font-size: 20px;
+  font-family: "Share Tech Mono";
+}
+
+#laptop-image {
+  width: 650px;
+  height: 450px;
+}
+
+#laptop-description,
+#work-balance-text,
+#bank-balance-text,
+#loan-balance-text {
+  font-size: 30px;
+}
+
+#work-balance,
+#bank-balance,
+#loan-balance {
+  font-size: 35px;
+}
+
+#work-index,
+#bank-index,
+#loan-index {
+  background-color: white;
+  border: 10px groove rgba(170, 170, 170, 0.822);
+}
+
 #footer {
   height: 55px;
   position: absolute;
@@ -47,49 +106,7 @@ a:link {
     rgba(69, 219, 174, 0.31)
   );
 }
-#laptop-select {
-  display: flex;
-  flex-flow: row nowrap;
-}
-#lpts {
-  flex: 90%;
-}
-#features-section {
-  flex: 10%;
-  justify-content: center;
-}
-#laptop-menu {
-  height: 15%;
-}
-#laptop-features {
-  width: 30%;
-  font-size: 20px;
-  font-family: "Share Tech Mono";
-}
+
 #footer-item {
   font-size: medium;
-}
-#nav-item {
-  font-size: 45px;
-}
-#laptop-title {
-  font: 55px italic;
-  text-decoration: underline;
-}
-
-#laptop-description,
-#work-balance-text,
-#bank-balance-text,
-#loan-balance-text {
-  font-size: 30px;
-}
-#work-balance,
-#bank-balance,
-#loan-balance {
-  font-size: 35px;
-}
-
-#laptop-image {
-  width: 650px;
-  height: 450px;
 }

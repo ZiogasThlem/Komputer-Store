@@ -18,10 +18,15 @@ export function setLoan(loan) {
 }
 
 const getNewLoan = () => {
-  if (parseInt(document.getElementById("bank-balance").innerHTML) === 0) {
+  let loan = parseInt(document.getElementById("loan-balance").innerHTML);
+  let depositedBalance = parseInt(
+    document.getElementById("bank-balance").innerHTML
+  );
+  
+  if (depositedBalance === 0) {
     alert(`You don't have any balance left thus you can't take a loan`);
   } else {
-    if (parseInt(document.getElementById("loan-balance").innerHTML) > 0) {
+    if (loan > 0) {
       alert(
         "You already have an outstanding loan. Pay it back first to be elgible for a new one."
       );
@@ -30,10 +35,10 @@ const getNewLoan = () => {
         prompt("Please enter the amount you desire: ")
       );
 
-      if (desiredLoan > 2 * document.getElementById("bank-balance").innerHTML) {
+      if (desiredLoan > 2 * depositedBalance) {
         alert(
           `Your balance is ${
-            desiredLoan - 2 * document.getElementById("bank-balance").innerHTML
+            desiredLoan - 2 * depositedBalance
           }$ too short for the chosen loan.`
         );
       } else if (desiredLoan === 0)
@@ -41,12 +46,12 @@ const getNewLoan = () => {
       else {
         alert(`${desiredLoan}$ have been added to your balance`);
         setLoan(
-          parseInt(document.getElementById("loan-balance").innerHTML) +
+          loan +
             desiredLoan
         );
 
         setBalance(
-          parseInt(document.getElementById("bank-balance").innerHTML) +
+          depositedBalance +
             desiredLoan
         );
         if (desiredLoan != 0) repayLoanButton.disabled = false;

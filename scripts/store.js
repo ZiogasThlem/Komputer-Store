@@ -53,15 +53,13 @@ const buyNow = () => {
 
   if (balance >= price){
     setBalance(balance - price)
-    alert(`Congratulations your new purchase! Happy coding with your fancy new ${title}!
+    alert(`Congratulations on your new purchase! Happy coding with your fancy new ${title}!
     `)
   }
   else {
       alert(`Your balance is ${price-balance}$ short for ${title}`)
   }  
 }
-
-
 
 laptopMenu.addEventListener("change", handleLaptopMenuChange);
 buyNowBtn.addEventListener("click",buyNow)
