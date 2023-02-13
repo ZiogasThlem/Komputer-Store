@@ -31,18 +31,14 @@ const getNewLoan = () => {
       // making sure desiredLoan amount is valid since one can't 
       // take 0$ loan and desiredLoan must be a number
       if (isNaN(desiredLoan)) return alert('Action canceled')
-      while (desiredLoan === 0){
+      while (desiredLoan <= 0){
         desiredLoan = parseInt(prompt("Please enter a valid amount"));
       }
 
       // third condition for desired loan bank balance comparison
       if (desiredLoan > 2 * bankBalance) {
-        alert(`Your balance is ${desiredLoan - 2 * bankBalance}$
-         too short for the chosen loan.`);
+        alert(`Your balance is ${desiredLoan - 2 * bankBalance}$ too short for the chosen loan.`);
       }
-
-      // bonus condition for when user enters 0 for his desired loan amount
-      else if (desiredLoan === 0) alert(`You added 0$ to your balance. Yeah...`);
 
       else {
         // user finally aquires their loan
@@ -57,12 +53,13 @@ const getNewLoan = () => {
         loanIndex.style.visibility = "visible"
 
       }
-    } else {
-      alert(`You already have an outstanding loan. Pay it 
-      back first to be elgible for a new one.`);
-    }
+    } 
+    // informing the user that they already have an outstanding loan that they need to pay
+    else alert(`You already have an outstanding loan. Pay it back first to be elgible for a new one.`);
+    
   }
   else {
+    //informing the user that they can't take a loan with 0 Bank balance
     alert(`You don't have any balance left thus you can't take a loan`);
   }
 };
