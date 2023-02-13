@@ -68,6 +68,9 @@ const buyNow = () => {
   // condition for Bank Balance and laptop price comparison
   if (bankBalance >= price){
 
+    // confirming the order
+    const confirmation = confirm(`Are you sure you want ot buy ${title} ?`)
+    if (!confirmation) return alert(`Action canceled`)
     // Bank Balance is enough to buy the selected laptp!. Laptop purchase
     // is complete, and Bank Balance is set accordingly
     setBalance(bankBalance - price)

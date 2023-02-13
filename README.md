@@ -9,8 +9,7 @@ I made use of two git branches, the "master" branch with the final product and t
 - **index.html**, file with HTML code and project skeleton
 - **style.css**, file with CSS code making use of Bootstrap library for styling the .html file
 - **scripts directory**, (covered in detail below)
-- **bg-image.png**, image file I used as background for the project
-- **sample layout.png**, image of what the application should look like 
+- **images directory**, includes background image I used and sample layours, with and without hidden buttons
 - **Komputer Store.pdf**, custom Figma Wireframe with the layout I used (default screen size used is 13,3")
 
 The project represents a computer store (with a built-in ATM!). Making use of "container-fluid" Bootstrap block, the components are then split into three rows: Header, Main and Footer.
