@@ -4,9 +4,10 @@ import {setBalance} from "./bank.js";
 const laptopMenu = document.getElementById("laptop-menu")
 const featuresList = document.getElementById("laptop-features")
 const laptopImage = document.getElementById("laptop-image")
-const laptopDescriptionDiv = document.getElementById("laptop-description")
-const laptopPriceDiv = document.getElementById("laptop-price")
+const laptopDescription = document.getElementById("laptop-description")
+const laptopPrice = document.getElementById("laptop-price")
 const laptopTitle = document.getElementById("laptop-title")
+const laptopStock = document.getElementById("laptop-stock")
 const buyNowBtn = document.getElementById("buy-now");
 
 // laptops array initialization
@@ -25,9 +26,10 @@ const addLaptopsToMenu = (laptops) => {
   // when initialized, the page shows the 
   //values of the first object of the laptops array 
   featuresList.innerHTML = laptops[0].specs;
-  laptopPriceDiv.innerHTML = parseInt(laptops[0].price);
+  laptopPrice.innerHTML = parseInt(laptops[0].price);
   laptopTitle.innerHTML = laptops[0].title;
-  laptopDescriptionDiv.innerHTML = laptops[0].description;
+  laptopStock.innerHTML = parseInt(laptops[0].stock)
+  laptopDescription.innerHTML = laptops[0].description;
   laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + laptops[0].image;
 }
 
@@ -45,9 +47,11 @@ const addLaptopToMenu = (laptop) => {
 const handleLaptopMenuChange = (event) => {
   const currentLaptop = laptops[event.target.selectedIndex];
   featuresList.innerHTML = currentLaptop.specs;
-  laptopPriceDiv.innerHTML = parseInt(currentLaptop.price);
-  laptopDescriptionDiv.innerHTML = currentLaptop.description;
+  laptopPrice.innerHTML = parseInt(currentLaptop.price);
+  laptopStock.innerHTML = parseInt(currentLaptop.stock)
+  laptopDescription.innerHTML = currentLaptop.description;
   laptopTitle.innerHTML = currentLaptop.title;
+
   laptopImage.src ="https://hickory-quilled-actress.glitch.me/" + currentLaptop.image;
 }
 
