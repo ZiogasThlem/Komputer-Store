@@ -4,7 +4,7 @@ body {
   background image */
   position: relative;
   min-height: 100vh;
-  background-image: url(bg-image.png);
+  background-image: url(/images/bg-image.png);
 }
 a:link {
   /* removing underline from the links */
