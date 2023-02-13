@@ -29,7 +29,8 @@ const getNewLoan = () => {
 
       // making sure desiredLoan amount is valid since one can't 
       // take 0$ loan and desiredLoan must be a number
-      while (isNaN(desiredLoan) || (desiredLoan === 0)){
+      if (isNaN(desiredLoan)) return alert('Action canceled')
+      while (desiredLoan === 0){
         desiredLoan = parseInt(prompt("Please enter a valid amount"));
       }
 
