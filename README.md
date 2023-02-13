@@ -9,7 +9,7 @@ I made use of two git branches, the "master" branch with the final product and t
 - **index.html**, file with HTML code and project skeleton
 - **style.css**, file with CSS code making use of Bootstrap library for styling the .html file
 - **scripts directory**, (covered in detail below)
-- **images directory**, includes background image I used and sample layours, with and without hidden buttons
+- **images directory**, includes background image I used, sample layours, with and without hidden buttons and favicon
 - **Komputer Store.pdf**, custom Figma Wireframe with the layout I used (default screen size used is 13,3")
 
 The project represents a computer store (with a built-in ATM!). Making use of "container-fluid" Bootstrap block, the components are then split into three rows: Header, Main and Footer.
@@ -45,3 +45,5 @@ Lastly, in the footer we can see the "They said about us", "LinkedIn", "Become a
     3. handleRepayLoan: This function is used for transferring the whole amount of the Wallet Balance to the bank, for repaying an outstanding loan. The transferred is subtracted for the loan and the remaining amount is added to the Bank Balance (again with the use of imported setter functions). It is linked to the Repay Loan button. One important note is that this button starts as "disabled", and is set to "enabled" if and only if the user gets a loan. Then if the loan is payed back (through the handleMakeDeposit and this function) the button again is set to "disabled".
 
 
+
+Project is also deployed on https://ziogasthlem.github.io/Komputer-Store/

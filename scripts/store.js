@@ -51,7 +51,6 @@ const handleLaptopMenuChange = (event) => {
   laptopStock.innerHTML = parseInt(currentLaptop.stock)
   laptopDescription.innerHTML = currentLaptop.description;
   laptopTitle.innerHTML = currentLaptop.title;
-
   laptopImage.src ="https://hickory-quilled-actress.glitch.me/" + currentLaptop.image;
 }
 

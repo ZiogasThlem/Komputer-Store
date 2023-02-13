@@ -46,7 +46,7 @@ const handleMakeDeposit = () => {
       // only that amount is subtracted from the work balance
       // ex: loan is 50$ and transfer is 1000$, but 10% of the
       // transfer is 100$ that is more than the value of the loan
-      if (loan < transfer - transfer * (10 / 100)) {
+      if (loan <= transfer * (10 / 100)) {
         // adjusting loan and transfe values accordingly
         transfer -= loan;
         setLoan(0);
@@ -61,7 +61,7 @@ const handleMakeDeposit = () => {
         // adjusting loan and transfe values accordingly
         loan -= transfer * (10 / 100);
         alert(`${transfer * (10 / 100)}$ have been transfered to the loan payment.`);
-        transfer -= transfer * (10 / 100);
+        transfer *= (90 / 100);
         setLoan(loan);
       }
     }
@@ -103,7 +103,6 @@ const handleRepayLoan = () => {
   }
   // if not, the remaining amount is tranfered to the bank balance instead
   else {
-
     // adjusting loan and work balance values accordingly
     workBalance -= loan;
     setLoan(0);
