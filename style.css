@@ -1,27 +1,38 @@
+/* General styling */
 body {
+  /* setting body proportions and
+  background image */
   position: relative;
   min-height: 100vh;
   background-image: url(bg-image.png);
 }
-
 a:link {
+  /* removing underline from the links */
   text-decoration: none;
 }
+/* General styling end */
 
+/* Navbar styling */
 .navbar {
+  /* setting a multicolor background 
+  and an imported font for nav */
   background-image: linear-gradient(
     rgba(174, 194, 78, 0.222),
-    rgba(69, 219, 174, 0.31),
-    rgb(223, 223, 223)
+      rgba(69, 219, 174, 0.31),
+      rgb(223, 223, 223)
   );
   font-family: "Share Tech Mono";
 }
-
 #nav-item {
   font-size: 45px;
 }
+/* Navbar styling end */
 
+/* Main styling */
+ 
 #col1 {
+  /* setting col1 (work, bank, laptop select and laptop
+   features) to flexbox and adjusting proportions */
   font-family: "Calibre";
   font-size: x-large;
   flex: 60%;
@@ -31,35 +42,14 @@ a:link {
 }
 
 .column1-item {
+  /* setting margin and padding for 
+  all column1 elements */
   padding: 20px;
   margin: 20px;
 }
-
-#col2 {
-  flex: 40%;
-  padding: 40px;
-  display: flex;
-  flex-flow: column wrap;
-}
-
-#laptop {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-#laptops-select {
-  flex: 50%;
-  
-}
-
+#laptops-select,
 #features-section {
-  flex: 10%;
-  justify-content: center;
-}
-
-#laptop-title {
-  font: 55px italic;
-  text-decoration: underline;
+  flex: 50%;
 }
 
 #laptop-features {
@@ -67,33 +57,54 @@ a:link {
   font-size: 20px;
   font-family: "Share Tech Mono";
 }
-
-#laptop-image {
-  width: 650px;
-  height: 450px;
-}
-
 #laptop-description,
 #work-balance-text,
 #bank-balance-text,
 #loan-balance-text {
   font-size: 30px;
 }
-
 #work-balance,
 #bank-balance,
 #loan-balance {
   font-size: 35px;
 }
-
 #work-index,
 #bank-index,
 #loan-index {
   background-color: white;
-  border: 10px groove rgba(170, 170, 170, 0.822);
+  border: 10px groove rgba(158, 192, 181, 0.514);
+}
+#laptop {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
+#col2 {
+  /* setting col2 (computer section, price and buyNowBtn)
+  to flexbox and adjusting proportions */
+  flex: 40%;
+  padding: 40px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-around
+}
+
+#laptop-title {
+  font: 55px italic;
+  text-decoration: underline;
+}
+#laptop-image {
+  /* adjusting image size to one-size */
+  width: 650px;
+  height: 450px;
+}
+/* Main styling end */
+
+/* Footer styling */
 #footer {
+  /* "pinning" footer to the bottom,
+  adjusting proportions and setting
+  a multicolor background */
   height: 55px;
   position: absolute;
   bottom: 0;
@@ -109,5 +120,7 @@ a:link {
 }
 
 #footer-item {
-  font-size: medium;
+  font-size: large;
+  font-weight: bolder;
 }
+/* Footer styling end */

@@ -18,22 +18,25 @@
     <title>Komputer Store</title>
   </head>
   <body class="container-fluid">
-    <nav class="navbar navbar-light" class="row">
-      <header id="nav-item">
+    <!-- first row: Header (Bootstrap Navbar used)-->
+    <header class="navbar navbar-light" class="row">
+      <!--  Header links -->
+      <span id="nav-item">
         <a href="#" class="link-dark">Welcome to Komputer Store!</a>
-      </header>
+      </span>
       <h3
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Homepage idk"
       ></h3>
-      <header id="nav-item">
+      <span id="nav-item">
         <a href="#" class="link-dark">Information</a>
-      </header>
-      <header id="nav-item">
+      </span>
+      <span id="nav-item">
         <a href="#" class="link-dark">Contact</a>
-      </header>
-      <nav class="navbar navbar-light" id="nav-item">
+      </span>
+      <!-- Bootstrap Form mimicing a search bar -->
+      <nav class="navbar" id="nav-item">
         <div class="container-fluid">
           <form class="d-flex">
             <input
@@ -48,11 +51,12 @@
           </form>
         </div>
       </nav>
-    </nav>
-
+    </header>
+    <!-- second row: Main block (Flexbox) -->
     <main class="row">
-      <!-- two same sized rectangle boxes -->
-      <div id="col1">
+      <!-- Work and Bank Section -->
+      <section id="col1">
+        <!-- Work Box -->
         <div id="work" class="column1-item">
           <h2><u>My Wallet Balance</u></h2>
           <div id="work-index">
@@ -60,12 +64,39 @@
               >Current balance in Wallet: <span id="work-balance">0</span>$
             </span>
           </div>
-          <button class="btn btn-warning btn-lg" id="bank-btn">Bank</button>
-          <button class="btn btn-primary btn-lg" id="work-btn">Work</button>
-          <button class="btn btn-danger btn-lg" id="repay-btn" disabled>
+          <!-- Bank Button -->
+          <button
+            class="btn btn-warning btn-lg"
+            id="bank-btn"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Make a Deposit"
+          >
+            Bank
+          </button>
+          <!-- Work Button -->
+          <button
+            class="btn btn-primary btn-lg"
+            id="work-btn"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Recieve Salary"
+          >
+            Work
+          </button>
+          <!-- Repay Loan Button -->
+          <button
+            class="btn btn-danger btn-lg"
+            id="repay-btn"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Repay your Loan"
+            disabled
+          >
             Repay Loan
           </button>
         </div>
+        <!-- Bank Box -->
         <div id="bank" class="column1-item">
           <h2><u>My Bank Balance</u></h2>
           <div id="bank-index">
@@ -78,65 +109,94 @@
               >Current loan: <span id="loan-balance">0</span>$
             </span>
           </div>
-          <button class="btn btn-success btn-lg" type="submit" id="loan-btn">
-            Get a loan
+          <!-- Get a Loan Button -->
+          <button
+            class="btn btn-success btn-lg"
+            type="submit"
+            id="loan-btn"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Apply for new Loan"
+          >
+            Get a Loan
           </button>
         </div>
-        <!-- bigger one -->
-
-        <div id="laptop" class="column1-item">
-          <div id="laptops-select">
+        <!-- Laptop Select and Features Section-->
+        <aside id="laptop">
+          <!-- Laptop Select -->
+          <div id="laptops-select" class="column1-item">
             <h2><u>Laptops</u></h2>
-            <select class="form-select"id="laptop-menu"></select>
+            <select
+              class="form-select"
+              id="laptop-menu"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Select from a variety of Laptops"
+            ></select>
           </div>
-          <div id="feature-section">
+          <!-- Laptop Features -->
+          <div id="feature-section" class="column1-item">
             <h2><u>Features:</u></h2>
-            <div id="laptop-features"></div>
+            <blockquote id="laptop-features"></blockquote>
           </div>
-        </div>
-      </div>
-      <!-- big one -->
-      <div id="col2">
-        <section id="conputer-section">
+        </aside>
+      </section>
+      <!-- Laptop Buy Section -->
+      <section id="col2">
+        <!-- Laptop Image, Title and Description -->
+        <span id="conputer-section">
           <div id="imgage-title-joined">
             <p id="laptop-title"></p>
-            <img src="" id="laptop-image" />
+            <img src="" id="laptop-image" alt="Image not found" />
           </div>
-          <p id="laptop-description"></p>
-        </section>
+          <blockquote id="laptop-description"></blockquote>
+        </span>
+        <!-- Laptop Pirce -->
         <span>
           <h4>
-            Price:
-            <span id="laptop-price">0</span>
-            $
+            <u>Price:<span id="laptop-price">0</span>$</u>
           </h4>
         </span>
-        <button class="btn btn-info btn-lg" id="buy-now" type="submit">
+        <!-- BUY NOW! button -->
+        <button
+          class="btn btn-info btn-lg"
+          id="buy-now"
+          type="submit"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Don't think about it! Press the button!"
+        >
           BUY NOW!
         </button>
-      </div>
+      </section>
     </main>
-
+    <!-- third row: Footer -->
     <footer id="footer" class="row">
-      <h3 class="col" id="footer-item">
+      <!-- Footer links -->
+      <span class="col" id="footer-item">
         <a href="#" class="link-dark">They said about us...</a>
-      </h3>
-      <h3 class="col" id="footer-item">
+      </span>
+      <span class="col" id="footer-item">
         <a href="#" class="link-dark">LinkedIn</a>
-      </h3>
-      <h3 class="col" id="footer-item">
+      </span>
+      <span class="col" id="footer-item">
         <a href="#" class="link-dark">Become a partner</a>
-      </h3>
-      <h3 class="col" id="footer-item">
+      </span>
+      <!-- Bootstrap Form mimicing a search bar -->
+      <span class="col" id="footer-item">
         <form class="d-flex">
-          <label>Subscribe to our newsletter!</label>
+          <label
+            ><a href="#" class="link-dark"
+              >Subscribe to our newsletter!</a
+            ></label
+          >
           <input
             class="form-control me-2"
             type="search"
             placeholder="youremail@example.com"
           />
         </form>
-      </h3>
+      </span>
     </footer>
 
     <script src="scripts/store.js" type="module"></script>

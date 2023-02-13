@@ -1,5 +1,6 @@
 import {setBalance} from "./bank.js";
 
+// HTML elements required passed to variables
 const laptopMenu = document.getElementById("laptop-menu")
 const featuresList = document.getElementById("laptop-features")
 const laptopImage = document.getElementById("laptop-image")
@@ -8,15 +9,21 @@ const laptopPriceDiv = document.getElementById("laptop-price")
 const laptopTitle = document.getElementById("laptop-title")
 const buyNowBtn = document.getElementById("buy-now");
 
+// laptops array initialization
 let laptops = []
 
+// fetching data from the API
 fetch("https://hickory-quilled-actress.glitch.me/computers")
   .then((response) => response.json())
   .then((data) => (laptops = data))
   .then((laptops) => addLaptopsToMenu(laptops))
 
+// adding every individual laptop to the laptops array
 const addLaptopsToMenu = (laptops) => {
   laptops.forEach((laptop) => addLaptopToMenu(laptop));
+
+  // when initialized, the page shows the 
+  //values of the first object of the laptops array 
   featuresList.innerHTML = laptops[0].specs;
   laptopPriceDiv.innerHTML = parseInt(laptops[0].price);
   laptopTitle.innerHTML = laptops[0].title;
@@ -24,6 +31,7 @@ const addLaptopsToMenu = (laptops) => {
   laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + laptops[0].image;
 }
 
+// creating a laptop option element, and appending it to laptop menu select
 const addLaptopToMenu = (laptop) => {
   const laptopElement = document.createElement("option");
   laptopElement.value = laptop.id;
@@ -31,32 +39,44 @@ const addLaptopToMenu = (laptop) => {
   laptopMenu.appendChild(laptopElement);
 }
 
+// applying the value of each time current laptop,
+// and displaying it when a different laptop is selected
+// through the EventListener 
 const handleLaptopMenuChange = (event) => {
   const currentLaptop = laptops[event.target.selectedIndex];
   featuresList.innerHTML = currentLaptop.specs;
   laptopPriceDiv.innerHTML = parseInt(currentLaptop.price);
   laptopDescriptionDiv.innerHTML = currentLaptop.description;
   laptopTitle.innerHTML = currentLaptop.title;
-  laptopImage.src =
-    "https://hickory-quilled-actress.glitch.me/" +
-    currentLaptop.image;
+  laptopImage.src ="https://hickory-quilled-actress.glitch.me/" + currentLaptop.image;
 }
 
-const buyNow = () => {
-  const selectedLaptop = laptops[laptopMenu.selectedIndex]
-  const price = selectedLaptop.price
-  const title = selectedLaptop.title
-  const balance = parseInt(document.getElementById("bank-balance").innerHTML)
 
-  if (balance >= price){
-    setBalance(balance - price)
-    alert(`Congratulations on your new purchase! Happy coding with your fancy new ${title}!
-    `)
+const buyNow = () => {
+  
+  // declaring values needed to proceed for a laptop purchase
+  const currentLaptop = laptops[laptopMenu.selectedIndex]
+  const price = currentLaptop.price
+  const title = currentLaptop.title
+  const bankBalance = parseInt(document.getElementById("bank-balance").innerHTML)
+
+  // condition for Bank Balance and laptop price comparison
+  if (bankBalance >= price){
+
+    // Bank Balance is enough to buy the selected laptp!. Laptop purchase
+    // is complete, and Bank Balance is set accordingly
+    setBalance(bankBalance - price)
+    alert(`Congratulations on your new purchase! Happy coding with your fancy new ${title}!`)
   }
   else {
-      alert(`Your balance is ${price-balance}$ short for ${title}`)
+
+      // User doesn't have the required amount for their selected laptop
+      // and is informed of the missing amount.
+      alert(`Your balance is ${price-bankBalance}$ short for ${title}`)
   }  
 }
 
+// adding handleLaptopMenuChange and buyNow function to the EventListener
+// linking them to laptopMenu select and buyNow button respectively
 laptopMenu.addEventListener("change", handleLaptopMenuChange);
 buyNowBtn.addEventListener("click",buyNow)
