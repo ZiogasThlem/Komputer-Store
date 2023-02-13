@@ -5,6 +5,7 @@ const bankButton = document.getElementById("bank-btn");
 const workButton = document.getElementById("work-btn");
 const repayLoanButton = document.getElementById("repay-btn");
 const workBalanceElement = document.getElementById("work-balance");
+const loanIndex = document.getElementById("loan-index");
 
 let workBalance = parseInt(workBalanceElement.innerHTML);
 
@@ -46,18 +47,17 @@ const handleMakeDeposit = () => {
       // ex: loan is 50$ and transfer is 1000$, but 10% of the
       // transfer is 100$ that is more than the value of the loan
       if (loan < transfer - transfer * (10 / 100)) {
-
         // adjusting loan and transfe values accordingly
         transfer -= loan;
         setLoan(0);
-        // since loan is set to 0, thus paid back fully, 
-        // repay loan button is again set to disabled
-        repayLoanButton.disabled = true;
         alert(`Your loan is paid off!`);
+        // since loan is set to 0, thus paid back fully, 
+        // repay loan button and loan index are again hidden
+        repayLoanButton.style.visibility = "hidden";
+        loanIndex.style.visibility = "hidden"
       }
       // subtracting 10% from the transfer value and setting it to the loan
       else {
-
         // adjusting loan and transfe values accordingly
         loan -= transfer * (10 / 100);
         alert(`${transfer * (10 / 100)}$ have been transfered to the loan payment.`);
@@ -65,7 +65,6 @@ const handleMakeDeposit = () => {
         setLoan(loan);
       }
     }
-
     // deposit went through; adjusting the bank balance value accordingly
     // and informing the user of the transfered amount
     bankBalance += transfer;
@@ -73,9 +72,9 @@ const handleMakeDeposit = () => {
     alert(`${transfer}$ have been trasfered to your bank account.`);
   }
   else {
+    // informing the user of their lack of funds
     alert(`You don't have any balance left to deposit...`)
   }
-
 };
 
 const handleRepayLoan = () => {
@@ -87,7 +86,7 @@ const handleRepayLoan = () => {
   // condition for loan and work balance comparison
   // if loan is greater than or equal to work balance,
   // the whole work balance amount is transfered to the loan
-  if (loan >= workBalance) {
+  if (loan > workBalance) {
 
     // user can't repay their loan with no work balance
     if (workBalance === 0) {
@@ -101,8 +100,6 @@ const handleRepayLoan = () => {
       workBalance = 0;
       document.getElementById("work-balance").innerHTML = workBalance;
     }
-
-
   }
   // if not, the remaining amount is tranfered to the bank balance instead
   else {
@@ -111,19 +108,22 @@ const handleRepayLoan = () => {
     workBalance -= loan;
     setLoan(0);
     // since loan is set to 0, thus paid back fully, 
-    // repay loan button is again set to disabled
+    // repay loan button and loan index are again hidden
     alert(`Your loan is paid off!`);
-    repayLoanButton.disabled = true;
+    repayLoanButton.style.visibility = "hidden";
+    loanIndex.style.visibility = "hidden"
 
     // finally, transfering the remaining amount of work balance to bank balance
     if (workBalance > 0) {
       alert(`${workBalance}$ have been transfered to your Bank balance`)
     }
+    // adjusting bank balance and work balance accordingly
     bankBalance += workBalance;
     setBalance(bankBalance);
     workBalance = 0;
     document.getElementById("work-balance").innerHTML = workBalance;
   }
+  
 };
 
 // adding handleSalaryAddition, handleMakeDeposit and handleRepayLoan

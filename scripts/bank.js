@@ -1,5 +1,6 @@
 // HTML elements required passed to variables
 const loanBtn = document.getElementById("loan-btn");
+const loanIndex = document.getElementById("loan-index");
 const repayLoanButton = document.getElementById("repay-btn");
 
 // implementing and exporting setter fucntion for Bank Balance
@@ -51,8 +52,10 @@ const getNewLoan = () => {
         setLoan(loan + desiredLoan);
         setBalance(bankBalance + desiredLoan);
 
-        //repay loan button is activated
-        repayLoanButton.disabled = false;
+        //repay loan button and loan index are activated
+        repayLoanButton.style.visibility = "visible";
+        loanIndex.style.visibility = "visible"
+
       }
     } else {
       alert(`You already have an outstanding loan. Pay it 
