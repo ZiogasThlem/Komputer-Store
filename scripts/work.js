@@ -21,61 +21,53 @@ const handleMakeDeposit = () => {
   let loan = parseInt(document.getElementById("loan-balance").innerHTML);
   let bankBalance = parseInt(document.getElementById("bank-balance").innerHTML);
 
-  // condition for positive work balance
-  if (workBalance > 0) {
-    // transfer amount input
-    let transfer = parseInt(prompt("Enter your desired amount: "));
+  // transfer amount input
+  let transfer = parseInt(prompt("Enter your desired amount: "));
 
-    // making sure transfer amount is valid since one can't transfer a higher 
-    // amount than that of their balance and transfer must be a number
-    if (isNaN(transfer)) return alert('Action canceled')
-    while ((transfer > workBalance) || (transfer===0)) {
-      transfer = parseInt(prompt("Please enter a valid amount"));
-    }
-
-    // transfer value is subtracted from the work balance
-    workBalance -= transfer;
-    document.getElementById("work-balance").innerHTML = workBalance;
-
-    // condition for possitive loan value, since transfer value 
-    // is altered when there is an outstanding loan
-    if (loan > 0) {
-
-      // if loan is less than 10% than the work balance,
-      // only that amount is subtracted from the work balance
-      // ex: loan is 50$ and transfer is 1000$, but 10% of the
-      // transfer is 100$ that is more than the value of the loan
-      if (loan < transfer - transfer * (10 / 100)) {
-
-        // adjusting loan and transfe values accordingly
-        transfer -= loan;
-        setLoan(0);
-        // since loan is set to 0, thus paid back fully, 
-        // repay loan button is again set to disabled
-        repayLoanButton.disabled = true;
-        alert(`Your loan is paid off!`);
-      }
-      // subtracting 10% from the transfer value and setting it to the loan
-      else {
-
-        // adjusting loan and transfe values accordingly
-        loan -= transfer * (10 / 100);
-        alert(`${transfer * (10 / 100)}$ have been transfered to the loan payment.`);
-        transfer -= transfer * (10 / 100);
-        setLoan(loan);
-      }
-    }
-
-    // deposit went through; adjusting the bank balance value accordingly
-    // and informing the user of the transfered amount
-    bankBalance += transfer;
-    setBalance(bankBalance);
-    alert(`${transfer}$ have been trasfered to your bank account.`);
-  }
-  else {
-    alert(`You don't have any balance left to deposit...`)
+  // making sure transfer amount is valid since one can't transfer a higher 
+  // amount than that of their balance and transfer must be a number
+  while ((transfer > workBalance) || (isNaN(transfer))) {
+    transfer = parseInt(prompt("Please enter a valid amount"));
   }
 
+  // transfer value is subtracted from the work balance
+  workBalance -= transfer;
+  document.getElementById("work-balance").innerHTML = workBalance;
+
+  // condition for possitive loan value, since transfer value 
+  // is altered when there is an outstanding loan
+  if (loan > 0) {
+
+    // if loan is less than 10% than the work balance,
+    // only that amount is subtracted from the work balance
+    // ex: loan is 50$ and transfer is 1000$, but 10% of the
+    // transfer is 100$ that is more than the value of the loan
+    if (loan < transfer - transfer * (10 / 100)) {
+
+      // adjusting loan and transfe values accordingly
+      transfer -= loan;
+      setLoan(0);
+      // since loan is set to 0, thus paid back fully, 
+      // repay loan button is again set to disabled
+      repayLoanButton.disabled = true;
+      alert(`Your loan is paid off!`);
+    }
+    // subtracting 10% from the transfer value and setting it to the loan
+    else {
+
+      // adjusting loan and transfe values accordingly
+      loan -= transfer * (10 / 100);
+      alert(`${transfer * (10 / 100)}$ have been transfered to the loan payment.`);
+      transfer -= transfer * (10 / 100);
+      setLoan(loan);
+    }
+  }
+
+  // deposit went through; adjusting the bank balance value accordingly
+  // and informing the user of the transfered amount
+  bankBalance += transfer;
+  setBalance(bankBalance);
+  alert(`${transfer}$ have been trasfered to your bank account.`);
 };
 
 const handleRepayLoan = () => {
@@ -93,7 +85,7 @@ const handleRepayLoan = () => {
     if (workBalance === 0) {
       alert(`Add balance to your wallet before trying to repay your loan.`);
     }
-    else {
+    else{
       // adjusting loan and work balance values accordingly
       loan -= workBalance;
       alert(`${workBalance}$ have been transfered to the loan payment.`)
@@ -116,9 +108,6 @@ const handleRepayLoan = () => {
     repayLoanButton.disabled = true;
 
     // finally, transfering the remaining amount of work balance to bank balance
-    if (workBalance > 0) {
-      alert(`${workBalance}$ have been transfered to your Bank balance`)
-    }
     bankBalance += workBalance;
     setBalance(bankBalance);
     workBalance = 0;

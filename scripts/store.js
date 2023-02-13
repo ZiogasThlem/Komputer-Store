@@ -64,20 +64,19 @@ const buyNow = () => {
   const title = currentLaptop.title
   const bankBalance = parseInt(document.getElementById("bank-balance").innerHTML)
 
-  alert(`Prossessing your order...`)
   // condition for Bank Balance and laptop price comparison
   if (bankBalance >= price){
 
     // Bank Balance is enough to buy the selected laptp!. Laptop purchase
     // is complete, and Bank Balance is set accordingly
     setBalance(bankBalance - price)
-    alert(`Congratulations on your new purchase! Happy coding with your fancy new ${title}! 👨‍💻`)
+    alert(`Congratulations on your new purchase! Happy coding with your fancy new ${title}!`)
   }
   else {
 
       // User doesn't have the required amount for their selected laptop
       // and is informed of the missing amount.
-      alert(`Your balance is ${price-bankBalance}$ short to buy ${title}`)
+      alert(`Your balance is ${price-bankBalance}$ short for ${title}`)
   }  
 }
 
