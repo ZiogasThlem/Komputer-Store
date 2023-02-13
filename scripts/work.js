@@ -48,6 +48,7 @@ const handleMakeDeposit = () => {
       // transfer is 100$ that is more than the value of the loan
       if (loan < transfer - transfer * (10 / 100)) {
         // adjusting loan and transfe values accordingly
+        alert(`${(transfer * (10 / 100) - loan)}$ have been transfered to the loan payment.`);
         transfer -= loan;
         setLoan(0);
         alert(`Your loan is paid off!`);
