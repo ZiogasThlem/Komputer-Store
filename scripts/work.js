@@ -32,6 +32,7 @@ const handleMakeDeposit = () => {
     if (isNaN(transfer)) return alert('Action canceled')
     while ((transfer > workBalance) || (transfer<=0)) {
       transfer = parseInt(prompt("Please enter a valid amount"));
+      if (isNaN(transfer)) return
     }
 
     // transfer value is subtracted from the work balance

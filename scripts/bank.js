@@ -33,6 +33,7 @@ const getNewLoan = () => {
       if (isNaN(desiredLoan)) return alert('Action canceled')
       while (desiredLoan <= 0){
         desiredLoan = parseInt(prompt("Please enter a valid amount"));
+        if (isNaN(desiredLoan)) return
       }
 
       // third condition for desired loan bank balance comparison
